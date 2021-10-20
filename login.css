@@ -1,0 +1,39 @@
+body
+{
+	margin: 0;
+}
+
+main
+{
+	margin: 2em;
+}
+
+h > p
+{
+	text-align: center;
+	font-size: 2em;
+	background-color: #333;
+	color: white;
+	padding: 1em;
+}
+
+form
+{
+	float: right;
+}
+
+.sub_btn
+{
+	background-color: #333;
+	border-radius: 0.5em;
+	font-size: 1em;
+	text-align: center;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+    color: #fff;
+}
+
+.sub_btn:hover
+{
+	background-color: rgb(150, 150, 250);
+}

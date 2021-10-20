@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<title>MicroBlast Technology</title>
+        <style>
+            body
+            {
+	            margin: 0;
+            }
+
+            main
+            {
+	            margin: 2em;
+            }
+
+            h > p
+            {
+	            text-align: center;
+	            font-size: 2em;
+	            background-color: #333;
+	            color: white;
+	            padding: 1em;
+            }
+
+            form
+            {
+	            float: right;
+            }
+
+            .sub_btn
+            {
+	            background-color: #333;
+	            border-radius: 0.5em;
+	            font-size: 1em;
+	            text-align: center;
+	            padding-left: 1.5em;
+	            padding-right: 1.5em;
+                color: #fff;
+            }
+
+            .sub_btn:hover
+            {
+	            background-color: rgb(150, 150, 250);
+            }
+        </style>
+	</head>
+	
+	<body>
+		<main>
+			<h>
+				<p>Welcome to MicroBlast Technology</p>
+			</h>
+			<form action="/login" method="POST">
+					<label>Employee: </label>
+					<input type="text" name="employee" value="<%= locals.employee  %>">
+
+					<label>Password: </label>
+					<input type="text" name="password" value="<%= locals.password %>">
+
+					<input class="sub_btn" type="submit">
+			</form>
+		</main>
+	</body>
+</html>

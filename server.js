@@ -13,6 +13,8 @@ app.get('/', (req, res)=>{
     res.render('login');
 });
 
+//This is where we'd use middleware in order to hash the sensitive information.
+//This demo just exemplifies how to use routes.
 app.post('/login', (req, res)=>{
     let user_name = req.body.employee;
     let password = req.body.password;

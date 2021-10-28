@@ -33,7 +33,8 @@ app.post('/index', (req, res)=>{
         console.log(rows.DEPT_ID); //Demonstrates that the proper department was called. Can be used to ensure only people in this department get access to certain functions.
     });
     
-    res.render('./index', {employee: user_name, password: password});
+    res.render('./index', {employee: user_name, password: password});  //Renders index page with credentials.  Consider reworking such that only authenticated
+    //credentials have access.  Man I wish I had other people helping with this kind of stuff.  lol  Stop talking to yourself, Paul.
 });
 
 app.listen(PORT, ()=>{

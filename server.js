@@ -29,11 +29,8 @@ app.get('/', (req, res)=>{
 app.post('/index', (req, res)=>{
     connection.query(`SELECT * FROM employees WHERE EMP_ID = \"${req.body.employee}\" AND EMP_PASSWORD = \"${req.body.password}\"`, (err, result, fields)=>{
         if(err) throw err;
-        if(result.length == 0) 
-        {
-            res.render('./login');
-            return;
-        }
+        if(result.length == 0) return res.render('./login');
+        
         let rows = JSON.parse(JSON.stringify(result[0]));
         res.render('./index', {employee: `${rows.EMP_FIRST_NAME} ${rows.EMP_LAST_NAME}`, password: rows.EMP_EMAIL});
     });

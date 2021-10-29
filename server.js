@@ -29,12 +29,14 @@ app.get('/', (req, res)=>{
 app.post('/index', (req, res)=>{
     connection.query(`SELECT * FROM employees WHERE EMP_ID = \"${req.body.employee}\" AND EMP_PASSWORD = \"${req.body.password}\"`, (err, result, fields)=>{
         if(err) throw err;
+        if(result.length == 0) 
+        {
+            res.render('./login');
+            return;
+        }
         let rows = JSON.parse(JSON.stringify(result[0]));
-        console.log(rows.DEPT_ID); //Demonstrates that the proper department was called. Can be used to ensure only people in this department get access to certain functions.
+        res.render('./index', {employee: `${rows.EMP_FIRST_NAME} ${rows.EMP_LAST_NAME}`, password: rows.EMP_EMAIL});
     });
-    
-    res.render('./index', {employee: user_name, password: password});  //Renders index page with credentials.  Consider reworking such that only authenticated
-    //credentials have access.  Man I wish I had other people helping with this kind of stuff.  lol  Stop talking to yourself, Paul.
 });
 
 app.listen(PORT, ()=>{

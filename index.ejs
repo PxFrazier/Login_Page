@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
 		<meta charset="utf-8">
 		<title>MicroBlast Technology</title>
 		<link rel="stylesheet" href="./styles/index.css">
+		<script defer src="./scripts/index_script.js"></script>
 	</head>
 	
 	<body>
-		<main>
-			<h>
-				<p>Welcome to MicroBlast Technology</p>
-			</h>
-
-            <p>
-                This is the main page!
-            </p>
-			<p>
-				<p>The employee is:</p>
-				<%= locals.employee %>
-				<p>The password is:</p>
-				<%= locals.password %>
-			</p>
-		</main>
+		<nav class="navigation">
+			<a>Home</a>
+			<a>Contact</a>
+			<a>Portfolio</a>
+			<a>About</a>
+		</nav>
+		<div class="greeting">
+        	<h1 id="employee">Welcome, <%= locals.employee %>!</h1>
+			<p id="email"><%= locals.email %></p>
+		</div>
 	</body>
+	
 </html>

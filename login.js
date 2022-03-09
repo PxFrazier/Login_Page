@@ -5,7 +5,7 @@ const router = express.Router();
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Onkwehonwe+1',
+    password: '*************',
     database: 'microblast_arts'
 });
 
